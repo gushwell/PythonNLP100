@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# my sewttings.json
+settings.json
