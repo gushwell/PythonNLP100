@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # my sewttings.json
-settings.json
+.vscode/settings.json
