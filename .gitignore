@@ -110,3 +110,6 @@ hightemp.txt
 hightemp1.txt
 hightemp2.txt
 hightemp3.txt
+*.txt
+jawiki-country.json
+jawiki-country.json.gz
