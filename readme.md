@@ -5,3 +5,6 @@
 [第1章: 準備運動](https://github.com/gushwell/PythonNLP100/tree/master/Chapter01)
 
 [第2章: UNIXコマンドの基礎](https://github.com/gushwell/PythonNLP100/tree/master/Chapter02)
+
+[第3章: 正規表現](https://github.com/gushwell/PythonNLP100/tree/master/Chapter03)
+
