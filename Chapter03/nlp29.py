@@ -22,11 +22,7 @@ def getImage(finename):
         + '&prop=imageinfo' \
         + '&iiprop=url'
     with urllib.request.urlopen(url) as res:
-        #x = res.read()
-        #y = x.decode()
-        #js = json.loads(y)
         data = json.loads(res.read().decode())
-        # print(data)
         return data['query']['pages']['-1']['imageinfo'][0]['url']
 
 
