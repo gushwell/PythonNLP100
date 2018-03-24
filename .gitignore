@@ -113,3 +113,4 @@ hightemp3.txt
 *.txt
 jawiki-country.json
 jawiki-country.json.gz
+*.mecab
