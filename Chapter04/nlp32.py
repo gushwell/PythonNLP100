@@ -21,8 +21,8 @@ def analyze():
 
 def extractVerbs(lines):
     for sentense in lines:
-        yield from map(lambda w: (w['surface'], w['base']), \
-            filter(lambda w: w['pos'] == '動詞', sentense))
+        seq = filter(lambda w: w['pos'] == '動詞', sentense)
+        yield from map(lambda w: (w['surface'], w['base']), seq)
 
 def main():
     article = analyze()
