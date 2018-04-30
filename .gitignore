@@ -116,3 +116,4 @@ jawiki-country.json.gz
 *.mecab
 test*.*
 *.png
+*.cabocha
