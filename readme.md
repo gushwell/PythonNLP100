@@ -11,3 +11,5 @@
 [第3章: 正規表現](https://github.com/gushwell/PythonNLP100/tree/master/Chapter03)
 
 [第4章: 形態素解析](https://github.com/gushwell/PythonNLP100/tree/master/Chapter04)
+
+[第5章: 係り受け解析](https://github.com/gushwell/PythonNLP100/tree/master/Chapter05)
