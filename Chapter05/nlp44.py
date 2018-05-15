@@ -1,5 +1,4 @@
 import re
-import os
 import functools
 import pydot_ng as pydot
 
