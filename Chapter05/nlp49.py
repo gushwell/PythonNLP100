@@ -28,12 +28,6 @@ class Chunk:
                 return True
         return False
 
-    def print(self):
-        print(self.number)
-        print([x.toList() for x in self.morphs])
-        print(self.dst, self.srcs)
-        print()
-
     def concatMorphs(self):
         seq = filter(lambda x: x.pos != '記号', self.morphs)
         return functools.reduce(lambda x, y: x + y.surface, seq, '')
