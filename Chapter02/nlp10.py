@@ -4,10 +4,10 @@ def countLine(filepath):
         for _ in f:
             count += 1
     return count
- 
+
 def main():
     count = countLine('hightemp.txt')
     print(count)
- 
+
 if __name__ == '__main__':
     main()
