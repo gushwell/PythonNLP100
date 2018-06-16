@@ -117,3 +117,4 @@ jawiki-country.json.gz
 test*.*
 *.png
 *.cabocha
+*.xml
