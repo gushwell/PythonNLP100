@@ -1,3 +1,4 @@
+# 第5章: 係り受け解析
 import re
 
 class Morph:
