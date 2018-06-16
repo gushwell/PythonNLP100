@@ -1,3 +1,4 @@
+# 第4章: 形態素解析
 import re
 
 def analyze():
