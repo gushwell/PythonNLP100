@@ -15,3 +15,5 @@
 [第5章: 係り受け解析](https://github.com/gushwell/PythonNLP100/tree/master/Chapter05)
 
 [第6章: 英語テキストの処理](https://github.com/gushwell/PythonNLP100/tree/master/Chapter06)
+
+[第7章: データベース](https://github.com/gushwell/PythonNLP100/tree/master/Chapter07)
