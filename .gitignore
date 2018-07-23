@@ -118,3 +118,5 @@ test*.*
 *.png
 *.cabocha
 *.xml
+*.json
+*.rdb
