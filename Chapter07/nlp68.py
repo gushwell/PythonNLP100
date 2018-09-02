@@ -9,7 +9,7 @@ def findDance():
 
 def main():
     for d in findDance()[0:10]:
-        print(f'{} - {}'.format(d['name'], d['rating']['count']))
+        print('{} - {}'.format(d['name'], d['rating']['count']))
         #print(f'{d['name']} - {d['rating']['count']}')
 
 if __name__ == '__main__':
