@@ -17,7 +17,7 @@ def AddMinus():
 def CreateText():
     lines = AddPlus() + AddMinus()
     random.shuffle(lines)
-    with open('chap08/sentiment.txt', 'w') as fout:
+    with open('sentiment.txt', 'w') as fout:
         fout.writelines(lines)
 
 
