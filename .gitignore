@@ -120,3 +120,5 @@ test*.*
 *.xml
 *.json
 *.rdb
+*.neg
+*.pos
