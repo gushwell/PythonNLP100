@@ -1,21 +1,24 @@
 import re
 from nltk import stem
-import numpy as np
+#import math
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, accuracy_score, \
+     f1_score, precision_score, recall_score
 from sklearn.externals import joblib
 
 class Stopwords:
-    words = ['a', 'about', 'all', 'an', 'and', 'any', 'are', 'as', \
-            'at', 'be', 'been', 'but', 'by', 'can', 'could', 'do', \
-            'does', 'for', 'from', 'has', 'have', 'he', 'her', 'his', \
-            'how', 'i', 'if', 'in', 'into', 'is', 'it', 'its', 'made', \
-            'make', 'may', 'me', 'my', 'no', 'not', 'of', 'on', 'one', \
-            'or', 'out', 'she', 'should', 'so', 'some', 'than', 'that', \
-            'the', 'their', 'them', 'there', 'then', 'they', 'this', \
-            'those', 'to', 'too', 'us', 'was', 'we', 'what', 'when',\
-            'which', 'who', 'with', 'would', 'you', 'your', ''
-    ]
+    words = [ \
+        'a', 'about', 'all', 'an', 'and', 'any', 'are', 'as', \
+        'at', 'be', 'been', 'but', 'by', 'can', 'could', 'do', \
+        'does', 'for', 'from', 'has', 'have', 'he', 'her', 'his', \
+        'how', 'i', 'if', 'in', 'into', 'is', 'it', 'its', 'made', \
+        'make', 'may', 'me', 'my', 'no', 'not', 'of', 'on', 'one', \
+        'or', 'out', 'she', 'should', 'so', 'some', 'than', 'that', \
+        'the', 'their', 'them', 'there', 'then', 'they', 'this', \
+        'those', 'to', 'too', 'us', 'was', 'we', 'what', 'when',\
+        'which', 'who', 'with', 'would', 'you', 'your', ''
+        ]
 
     @staticmethod
     def exists(word):
@@ -86,7 +89,7 @@ class SentimentAnalyser:
         X = []
         y = []
         sf = SentimentFeatures()
-        for sentiment, features in sf.enumerate(filename, 'cp1252'):
+        for sentiment, features in sf.enumerate(filename,'utf-8'):
             y.append(1.0 if sentiment[0] == '+' else 0.0)
             X.append(' '.join(features))
         return X, y
@@ -94,19 +97,14 @@ class SentimentAnalyser:
 def main():
     sa = SentimentAnalyser()
     sa.load()
+    X_test, y_test = sa.getFeatureData('chapter08/sentiment.txt')
+    y_test_pred = sa.predict(X_test)
+    print('正解率 accuracy:', accuracy_score(y_test, y_test_pred))
+    print('適合率 precision:', precision_score(y_test, y_test_pred))
+    print('再現率 recall:', recall_score(y_test, y_test_pred))
+    print('F1スコア f1_score:', f1_score(y_test, y_test_pred))
 
-    # fit_transform/transformに渡した単語一覧(学習データ一覧)を得る (重複はなし)
-    features = sa.cv.get_feature_names()
-    # coef_ には学習した結果の重みが入る。
-    # これをソートして、そのインデックスを得る argsortはソートした結果のインデックスが返る
-    sorted_idx = np.argsort(sa.lr.coef_)[0]
-    print('重みの高い素性トップ10')
-    for i in sorted_idx[-1:-11:-1]:
-        print(features[i])
-    print()
-    print('重みの低い素性トップ10')
-    for i in sorted_idx[:10]:
-        print(features[i])
+    print(classification_report(y_test, y_test_pred))
 
 if __name__ == '__main__':
     main()
